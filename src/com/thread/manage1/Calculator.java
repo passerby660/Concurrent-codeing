@@ -1,4 +1,4 @@
-package com.thread.manage;
+package com.thread.manage1;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -49,7 +49,7 @@ public class Calculator implements Runnable {
         states = new Thread.State[10];
         AtomicInteger num = new AtomicInteger();
         num.set(10);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < num.get(); i++) {
             threads[i] = new Thread(new Calculator());
             if ((i % 2) == 0){
                 threads[i].setPriority(Thread.MAX_PRIORITY);
@@ -59,6 +59,8 @@ public class Calculator implements Runnable {
             threads[i].setName("My Thread " + i);
         }
 
+        AtomicInteger integer = new AtomicInteger();
+        integer.set(0);
         try(FileWriter file = new FileWriter("D:\\Git\\concurrent-codeing-study\\out\\log.txt");PrintWriter pw = new PrintWriter(file)){
             for (int i = 0; i < num.get(); i++) {
                 pw.println("Main : Status of Thread "+ i +" : " +threads[i].getState());
@@ -77,7 +79,12 @@ public class Calculator implements Runnable {
                 }
                 finish = true;
                 for (int i = 0; i < num.get(); i++) {
+                    System.out.println("------------------------------------------------------------------------------------");
+                    System.out.println("threads[i].getState(): "+threads[i].getState()+" -- i : "+i+" --integer : "+integer.get()+" --判断"+String.valueOf(finish && (threads[i].getState() == Thread.State.TERMINATED)));
+                    System.out.println("finish: "+String.valueOf(finish)+"-----threads[i].getState(): "+String.valueOf(threads[i].getState())+"-----判断结果: "+String.valueOf(finish && (threads[i].getState() == Thread.State.TERMINATED)));
                     finish = finish && (threads[i].getState() == Thread.State.TERMINATED);
+                    System.out.println("判断结果: " + String.valueOf(finish));
+                    integer.set(integer.get()+1);
                 }
             }
         } catch (IOException e) {
