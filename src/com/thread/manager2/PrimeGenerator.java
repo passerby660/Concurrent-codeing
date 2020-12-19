@@ -13,6 +13,7 @@ public class PrimeGenerator extends Thread {
             if (isPrime(number)){
                 System.out.printf("Number %d is Prime\n",number);
             }
+            //测试线程是否被中断
             if (isInterrupted()){
                 System.out.printf("The Prime Generator has been Interrupted");
                 return;
