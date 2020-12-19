@@ -2,7 +2,7 @@ package com.thread.manager2;
 
 /**
  * @author Admin
- * 线程中段
+ * 线程中断
  */
 public class PrimeGenerator extends Thread {
 
