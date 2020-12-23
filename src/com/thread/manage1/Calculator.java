@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author elliott
- *
+ * 线程优先级
  */
 public class Calculator implements Runnable {
     @Override
