@@ -2,9 +2,7 @@ package com.thread.manage2;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * @author elliott
- */
+
 /**
  * @author Admin
  * 线程中断
