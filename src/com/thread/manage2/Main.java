@@ -1,13 +1,17 @@
-package com.thread.manager2;
+package com.thread.manage2;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author Admin
+ * 线程中断
+ */
 public class Main {
     public static void main(String[] args) {
         Thread task = new PrimeGenerator();
         task.start();
         try {
-            TimeUnit.SECONDS.sleep(50000);
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
