@@ -2,6 +2,10 @@ package com.thread.manage6;
 
 import java.util.Date;
 
+/**
+ * @author Admin
+ * 这个类用来存储事件信息
+ */
 public class Event {
     private Date date;
     private String event;
@@ -22,10 +26,10 @@ public class Event {
         this.event = event;
     }
 
-    public Event(){}
-
-    public Event(Date date, String event) {
-        this.date = date;
-        this.event = event;
-    }
+//    public Event(){}
+//
+//    public Event(Date date, String event) {
+//        this.date = date;
+//        this.event = event;
+//    }
 }
