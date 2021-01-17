@@ -12,7 +12,10 @@ public class ParkingCash {
         this.cash = 0;
     }
 
-    public void vehiclepay(){
+    /**
+     * 当有车离开停车场时费用增加
+     */
+    public void vehiclePay(){
         cash += cost;
     }
 

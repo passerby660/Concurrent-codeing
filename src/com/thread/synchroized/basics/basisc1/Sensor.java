@@ -2,6 +2,9 @@ package com.thread.synchroized.basics.basisc1;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author Admin
+ */
 public class Sensor implements Runnable {
     private ParkingStats stats;
 

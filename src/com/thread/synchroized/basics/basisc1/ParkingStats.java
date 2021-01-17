@@ -1,23 +1,27 @@
 package com.thread.synchroized.basics.basisc1;
 
+/**
+ * @author Admin
+ * 提供三个私有变量和机动车驶入离开所需要的方法
+ */
 public class ParkingStats {
-    private long numberCaes;
+    private long numberCase;
     private long numberMotorcycles;
     private ParkingCash cash;
 
     public ParkingStats(ParkingCash cash) {
-        numberCaes = 0;
+        numberCase = 0;
         numberMotorcycles = 0;
         this.cash = cash;
     }
 
     public void carComeIn(){
-        numberCaes++;
+        numberCase++;
     }
 
     public void carGoOUt(){
-        numberCaes--;
-        cash.vehiclepay();
+        numberCase--;
+        cash.vehiclePay();
     }
 
     public void motoComeIn(){
@@ -26,11 +30,11 @@ public class ParkingStats {
 
     public void  motoGoOut(){
         numberMotorcycles--;
-        cash.vehiclepay();
+        cash.vehiclePay();
     }
 
-    public long getNumberCaes() {
-        return numberCaes;
+    public long getNumberCase() {
+        return numberCase;
     }
 
     public long getNumberMotorcycles() {
